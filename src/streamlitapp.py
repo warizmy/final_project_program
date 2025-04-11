@@ -1,13 +1,14 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import os
 
 # Load model dan sclaer
 model = joblib.load('./models/best_rf_model.joblib')
 scaler = joblib.load('./models/standard_scaler.joblib')
 
 st.set_page_config(
-    page_title="Prediksi Ketepatan Lulus Mahasiswa", 
+    page_title="Klasifikasi Ketepatan Lulus Mahasiswa", 
     page_icon="../public/assets/favicon.ico" 
 )
 
@@ -21,7 +22,7 @@ def preprocess_input(input_df):
     return processed_df
 
 def main():
-    st.title('Prediksi Ketepatan Lulus Mahasiswa 🎓')
+    st.title('Klasifikasi Ketepatan Lulus Mahasiswa 🎓')
     
     with st.form("input_form"):
         st.subheader("Data Mahasiswa")
@@ -57,7 +58,7 @@ def main():
         prediction = model.predict(processed_data)
         
         result = "Lulus Tepat Waktu ✅" if prediction[0] == 1 else "Tidak Lulus Tepat Waktu ❌"
-        st.success(f"Hasil Prediksi: {result}")
+        st.success(f"Hasil Klasifikasi: {result}")
 
 if __name__ == '__main__':
     main()
