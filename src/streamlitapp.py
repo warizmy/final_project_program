@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 
 # Load model dan sclaer
-model = joblib.load('../models/best_rf_model.joblib')
-scaler = joblib.load('../models/standard_scaler.joblib')
+model = joblib.load('./models/best_rf_model.joblib')
+scaler = joblib.load('./models/standard_scaler.joblib')
 
 st.set_page_config(
     page_title="Prediksi Ketepatan Lulus Mahasiswa", 
