@@ -43,7 +43,7 @@ def main():
         ipk = st.number_input('IPK Rata-rata', min_value=0.0, max_value=4.0, step=0.01)
         total_sks = st.number_input('Total SKS', min_value=0)
         
-        submit_button = st.form_submit_button("Prediksi 🚀")
+        submit_button = st.form_submit_button("Klasifikasi 🚀")
 
     if submit_button:
         input_data = pd.DataFrame([[
